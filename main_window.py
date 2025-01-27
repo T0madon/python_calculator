@@ -6,8 +6,8 @@ class MainWindow(QMainWindow):
 
         # Configurando layout básico
         self.cw = QWidget()
-        self.vlayout = QVBoxLayout()
-        self.cw.setLayout(self.vlayout)
+        self.vLayout = QVBoxLayout()
+        self.cw.setLayout(self.vLayout)
         self.setCentralWidget(self.cw)
  
         # Título da janela
@@ -18,5 +18,5 @@ class MainWindow(QMainWindow):
         self.adjustSize()
         self.setFixedSize(self.width(), self.height())
 
-    def addWidgetToVLayout(self, widget: QWidget):
-        self.vlayout.addWidget(widget)
+    def addToVLayout(self, widget: QWidget):
+        self.vLayout.addWidget(widget)
