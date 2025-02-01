@@ -20,15 +20,15 @@ if __name__ == '__main__':
     app.setWindowIcon(icon)
 
     # Info 
-    info = Info('2.0 ^ 10.0 = 1024')
-    window.addToVLayout(info)
+    info = Info('Sua conta')
+    window.addWidgetToVLayout(info)
 
     # Display
     display = Display()
-    window.addToVLayout(display)
+    window.addWidgetToVLayout(display)
 
     # Grid
-    buttonsGrid = ButtonsGrid(display, info, window)
+    buttonsGrid = ButtonsGrid(display, info)
     window.vLayout.addLayout(buttonsGrid)
 
     # Executa tudo
