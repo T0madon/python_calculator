@@ -58,7 +58,14 @@ class ButtonsGrid(QGridLayout):
         self._equation = value
         self.info.setText(value)
 
+    def vouApagarVocê(self):
+        print('Signal recebido por "vouApagarVocê" em', type(self).__name__)
+
     def _makeGrid(self):
+        self.display.eqPressed.connect(self.vouApagarVocê)
+        self.display.delPressed.connect(self.display.backspace)
+        self.display.clearPressed.connect(self.vouApagarVocê)
+
         for i, row in enumerate(self._gridMask):
             for j, buttonText in enumerate(row):
                 button = Button(buttonText)
@@ -80,7 +87,7 @@ class ButtonsGrid(QGridLayout):
         if text == 'C':
             self._connectButtonClicked(button, self._clear)
         
-        if text in '◀':
+        if text == '◀':
             self._connectButtonClicked(button, self.display.backspace)
 
         if text in '+-/*^':
@@ -89,7 +96,7 @@ class ButtonsGrid(QGridLayout):
                 self._makeSlot(self._operatorClicked, button)
             )
 
-        if text in '=':
+        if text == '=':
             self._connectButtonClicked(button, self._eq)
         
     def _makeSlot(self, func, *args, **kwargs):
