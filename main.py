@@ -4,7 +4,7 @@ from main_window import MainWindow
 from PySide6.QtGui import QIcon
 from info import Info
 from variables import WINDOW_ICON_PATH
-from components.display import Display
+from display import Display
 from styles import setupTheme
 from buttons import ButtonsGrid
 

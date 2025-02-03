@@ -7,7 +7,7 @@ from variables import MEDIUM_FONT_SIZE
 from utils import converToNumber, isEmpty, isNumOrDot, isValidNumber
 
 if TYPE_CHECKING:
-    from components.display import Display
+    from display import Display
     from main_window import MainWindow
     from info import Info
 
